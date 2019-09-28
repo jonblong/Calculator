@@ -1,0 +1,26 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "A simple online calculator.",
+  "main": "index.js",
+  "dependencies": {
+    "webpack-cli": "^3.3.9",
+    "webpack": "^4.41.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonblong/Calculator.git"
+  },
+  "author": "Jon Long",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonblong/Calculator/issues"
+  },
+  "homepage": "https://github.com/jonblong/Calculator#readme"
+}
