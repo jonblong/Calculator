@@ -1,3 +1,8 @@
+import Calculator from './calculator';
+
+Calculator.SetupButtons();
+Calculator.SetupKeyListener();
+/*
 // active number and number to operate with
 let activeNum = 0;
 let savedNum = 0;
@@ -228,3 +233,4 @@ function operate(op, a, b) {
             return 0;
     }
 }
+*/
