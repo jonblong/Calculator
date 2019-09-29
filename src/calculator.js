@@ -6,6 +6,9 @@ const Calculator = (function() {
   // flag for decimal vs. normal
   let decimalMode = false;
 
+  // flag to allow chaining with equal button
+  let equalMode = false;
+
   // active operation and all possible operations
   let activeOp = null;
   const ADD = 'a';
@@ -106,13 +109,14 @@ const Calculator = (function() {
     btnCancel.addEventListener('click', function() {
       activeNum = 0;
       storedNum = 0;
+      setDecimalMode(false);
+      equalMode = false;
       updateDisplay();
     });
 
     btnEquals.addEventListener('click', function() {
       equals();
-      activeNum = 0;
-      storedNum = 0;
+      equalMode = true;
     });
 
     btnDecimal.addEventListener('click', function() {
@@ -164,6 +168,13 @@ const Calculator = (function() {
 
   // handles logic for number input
   function numPress(num) {
+    // check to see if equal flag is true
+    if (equalMode) {
+      activeNum = 0;
+      storedNum = 0;
+      equalMode = false;
+    }
+
     // checks if there is already a decimal digit
     if (decimalMode) {
       let strNum = activeNum.toString();
@@ -189,18 +200,27 @@ const Calculator = (function() {
       updateDisplay();
     }
 
+    equalMode = false;
+
     activeOp = op;
     storedNum = activeNum;
     activeNum = 0;
+    console.log(`Active: ${activeNum}`);
+    console.log(`Stored: ${storedNum}`);
     setDecimalMode(false);
   }
 
   // carry out all pending operations
   function equals() {
     activeNum = operate(activeOp, activeNum, storedNum);
+    updateDisplay();
     activeOp = null;
     setDecimalMode(false);
-    updateDisplay();
+
+    console.log(`Active: ${activeNum}`);
+    console.log(`Stored: ${storedNum}`);
+
+    equalMode = true;
   }
 
   // set decimal mode to true or false
