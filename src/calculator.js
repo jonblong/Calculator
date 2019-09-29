@@ -111,6 +111,8 @@ const Calculator = (function() {
 
     btnEquals.addEventListener('click', function() {
       equals();
+      activeNum = 0;
+      storedNum = 0;
     });
 
     btnDecimal.addEventListener('click', function() {
