@@ -1,6 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:600&display=swap');
+
 * {
   margin: 0;
   padding: 0;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+}
+
+#calculator {
+  margin-top: 25px;
+  border: 3px solid black;
 }
 
 .row {
@@ -23,8 +35,12 @@
 
 .display p {
   padding-right: 15px;
+
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 28px;
 }
 
+/** @group buttons */
 .num_button,
 .op_button,
 .eq_button {
@@ -43,25 +59,43 @@
 .num_button,
 .op_button {
   width: 100px;
-  
 }
 
 .eq_button {
   width: 300px;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 32px;
 }
 
-.num_button {
-  background: #424242;
-  color: #e3e3e3;
+.num_button,
+#decimal,
+#sign,
+#equals {
+  background: #312C3E;
+  color: #F8F8F4;
 
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 32px;
 }
 
 .op_button {
-  background: #e3e3e3;
+  background: #F8F8F4;
   color: #424242;
 
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 32px;
+}
+
+#cancel {
+  background: #AD3E39;
+  color: #F8F8F4;
+}
+
+#add,
+#subtract,
+#multiply,
+#divide {
+  background: #E7663D;
+  color: #F8F8F4;
 }
